@@ -1,0 +1,9 @@
+#useDynLib(pchc, .registration = TRUE)
+
+import("Rfast")
+import("Rnanoflann")
+importFrom("stats", kmeans)
+
+exportPattern("^[[:alpha:]]+")
+exportPattern("^[^\\.]")
+

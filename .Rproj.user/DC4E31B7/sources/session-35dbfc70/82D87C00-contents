@@ -1,0 +1,75 @@
+\name{rmdp}
+\alias{rmdp}
+\title{
+Detection of high dimensional outliers using the RMDP
+}
+
+\description{
+Detection of high dimensional outliers using the RMDP.
+}
+
+\usage{
+rmdp(x, alpha = 0.05, itertime = 100, parallel = FALSE)
+}
+
+\arguments{
+\item{x}{
+A matrix with numerical data with more columns (p) than rows (n), i.e. n<p.
+}
+\item{alpha}{
+The significance level, i.e. used to decide whether an observation is said to be considered a possible outlier.
+The default value is 0.05.
+}
+\item{itertime}{
+The number of iterations the algorithm will be ran. The higher the sample size, the larger this number must be.
+With 50 observations in \eqn{R^1000} maybe this has to be 1000 in order to produce stable results.
+}
+\item{parallel}{
+A logical value for parallel version.
+}
+}
+
+\details{
+High dimensional outliers (n<<p) are detected using a properly constructed MCD. The variances of the variables are
+used and the determinant is simply their product.
+}
+
+\value{
+A list including:
+\item{runtime}{
+The duration of the process.
+}
+\item{dis}{
+The final estimated Mahalanobis type normalised distances.
+}
+\item{wei}{
+A bollean variable vector specifying whether an observation is "clean" (TRUE) or a possible outlier (FALSE).
+}
+}
+
+\references{
+Ro K., Zou C., Wang Z. and Yin G. (2015). Outlier detection for high-dimensional data.
+Biometrika, 102(3): 589--599.
+
+Tsagris M., Papadakis M., Alenazi A. and Alzeley O. (2024).
+Computationally Efficient Outlier Detection for High-Dimensional Data Using the MDP Algorithm.
+Computation, 12(9): 185.
+}
+
+\author{
+Michail Tsagris.
+
+R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr}.
+}
+
+\seealso{
+\code{ \link{dod}, \link{ahd}
+}
+}
+
+\examples{
+x <- matrix(rnorm(20 * 50), ncol = 50)
+x <- rbind(x, matrix(rnorm(2 * 50, 5, 1), ncol = 50) )
+a <- rmdp(x, itertime = 5)
+}
+

@@ -1,0 +1,10 @@
+#useDynLib(pchc, .registration = TRUE)
+
+importFrom("Rfast", rowsums, rowMaxs, rmdp, colMedians)
+importFrom("Rfast2", colQuantile)
+import("Rnanoflann")
+importFrom("stats", kmeans)
+
+exportPattern("^[[:alpha:]]+")
+exportPattern("^[^\\.]")
+
