@@ -7,7 +7,7 @@ Detection of Outliers in High Dimensional Data
 
 \description{
 Algorithms to detect high-dimensional outliers. The minimum diagonal product (MDP) of Ro, Zou, Wang and Yin (2015),
-the algorithm of Wilkinson that relies on nearest neighbours, and the Distances of Distances (DOD of Lee and Jeon (2025).
+the algorithm of Wilkinson that relies on nearest neighbours, and the distances of distances (DOD of Lee and Jeon (2025).
 }
 
 \details{
@@ -15,7 +15,7 @@ the algorithm of Wilkinson that relies on nearest neighbours, and the Distances 
 Package: \tab outliersHD\cr
 Type: \tab Package\cr
 Version: \tab 1.0 \cr
-Date: \tab 2026-06-20 \cr
+Date: \tab 2026-06-29 \cr
 }
 }
 
